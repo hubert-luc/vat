@@ -21,7 +21,7 @@ export const SearchCompanyBox: React.FC<SearchCompanyBoxProps> = ({
 
     try {
       const response = await axios.get<VatNumberValidationResponseData>(
-        `http://apilayer.net/api/validate?access_key=9176e8115611d974b335ceb8b603743f&vat_number=PL${searchTerm}`
+        `http://apilayer.net/api/validate?access_key=${process.env.REACT_APP_VAT_VERIFY_KEY}&vat_number=PL${searchTerm}`
       );
 
       const { data } = response;
